@@ -21,4 +21,6 @@ print(cnt)
 
 
 
+# print(sum((x//100+x%10==x//10%10*2)|(x<100) for x in range(1,int(input())+1)))
+
 
