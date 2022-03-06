@@ -5,4 +5,4 @@ for _ in range(int(input())):
     if p ==0:
         p=H
         b-=1
-    print(a*100+b)
+    print(p*100+b)
