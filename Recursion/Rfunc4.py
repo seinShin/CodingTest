@@ -1,15 +1,10 @@
-def isPalindrome(cnt, str):
-    if len(str) <=1:
-        print(1, cnt)
-    else:
-        if str[0:] == str[:-1]:
-            cnt+=1
-            return isPalindrome(cnt, str[1:-2])
-        else:
-            print(0, cnt) 
-    
-    
-n = int(input())
-for _ in range(n):
-    n = input()
-    isPalindrome(1, n)
+def recursion(s, l, r):
+    if l >= r: return 1
+    elif s[l] != s[r]: return 0
+    else: return recursion(s, l+1, r-1)
+
+def isPalindrome(s):
+    return recursion(s, 0, len(s)-1)
+
+print('ABBA:', isPalindrome('ABBA'))
+print('ABC:', isPalindrome('ABC'))
