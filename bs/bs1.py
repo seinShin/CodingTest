@@ -1,30 +1,23 @@
-import sys
+N = int(input())
+N_list = list(map(int, input().split()))
+M = int(input())
+M_list = list(map(int, input().split()))
+N_list.sort()
 
-n = int(sys.stdin.readline())
-lst = [*map(int, sys.stdin.readline().split())]
-m = int(sys.stdin.readline())
-lst2 = [*map(int, sys.stdin.readline().split())]
+def binary_search(value, start, end):
+    if start > end:
+        return False
     
-
-lst.sort()
-lst.sort()
-def binary_search(data, search):
-    if len(data) == 0:
-        return 0
-    elif len(data) == 1:
-        if data[0] == search:
-            return 1
-        else:
-            return 0
-    
-    medium = len(data) // 2
-    if search == data[medium]:
-        return 1
+    median = (start + end) // 2
+    if N_list[median] > value:
+        return binary_search(value, start, median - 1)
+    elif N_list[median] < value:
+        return binary_search(value, median + 1, end)
     else:
-        if search > data[medium]:
-            return binary_search(data[medium+1:], search)
-        else:
-            return binary_search(data[:medium], search)
+        return True
         
-for item in lst2:
-    print(binary_search(lst2, item))        
+for item in M_list:
+    if binary_search(item, 0, N - 1):
+        print (1)
+    else:
+        print (0)
