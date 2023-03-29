@@ -28,6 +28,6 @@ for i in range(n+1):
 
 dfs(graph, r, visited)
 
-for i in range(n+1):
+for i in range(1,n+1):
     print(visited[i])
     
