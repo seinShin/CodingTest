@@ -21,7 +21,7 @@ def dc(x,y,n):
                 dc(x+n//3*2,y+n//3,n//3)
                 dc(x+n//3*2,y+n//3*2,n//3)
                 return
-    if pv == 0:
+    if pv == 0: 
         rst.append(0)
     elif pv == -1:
         rst.append(-1)
