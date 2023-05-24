@@ -20,21 +20,21 @@ def BFS(start):
     q.append((start, 0))
     visited = [-1]*(v+1)
     visited[start] = 0
-    res = [0, 0] # start로부터 가장 먼 거리에 있는 노드와 거리 값
+    rst = [0, 0] 
     
     while q:
-        cnt_node, cnt_dist = q.popleft()
+        now, cost = q.popleft()
         
-        for adj_node, adj_dist in graph[cnt_node]:
+        for adj_node, adj_cost in graph[now]:
             if visited[adj_node] == -1:
-                cal_dist = cnt_dist + adj_dist
-                q.append((adj_node, cal_dist))
-                visited[adj_node] = cal_dist
-                if res[1] < cal_dist:
-                    res[0] = adj_node
-                    res[1] = cal_dist
+                total = cost + adj_cost
+                q.append((adj_node, total))
+                visited[adj_node] = total
+                if rst[1] < total:
+                    rst[0] = adj_node
+                    rst[1] = total
         
-    return res
+    return rst
 
 s,e = BFS(1)
 print(BFS(s)[1])
