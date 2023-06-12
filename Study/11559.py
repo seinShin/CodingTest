@@ -59,8 +59,8 @@ def drop():
 
 #main
 puyo=0
-flag = True
-while flag:
+
+while True:
     rst=0
     for i in range(12):
         for j in range(6):
@@ -73,9 +73,6 @@ while flag:
     puyo+=1
     drop()
     
-
-
-
 print(puyo)
 
                     
