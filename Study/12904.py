@@ -1,3 +1,4 @@
+#12904 A와 B
 import sys
 input = sys.stdin.readline
 
