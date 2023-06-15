@@ -26,58 +26,75 @@ def str_to_num(romaList):
             
     return total
 
+op = {'M': 1000, 'CM': 900, 'D': 500, 'CD': 400, 'C': 100, 'XC': 90, 
+      'L': 50, 'XL': 40, 'X': 10, 'IX': 9, 'V': 5, 'IV': 4, 'I': 1}
+
 #숫자_문자
 def num_to_str(num):
-    roma=''
-    i=0
-    # 자리수와 숫자 체크 
-    while num!=0:
-        size=len(str(num))
-        k=int(str(num)[i])
+    times = {'M': 3, 'CM': 1, 'D': 1, 'CD': 1, 'C': 3, 'XC': 1, 
+      'L': 1, 'XL': 1, 'X': 3, 'IX': 1, 'V': 1, 'IV': 1, 'I': 3}    
+    word = []
+    for t in times:
+        value = op.get(t) # 뺄 숫자
+        limit = times[t]
+        while limit and num >= value:
+            num -= value
+            times[t] -= 1
+            word.append(t)
+    return ''.join(word)
+
+    # roma=''
+    # i=0
+    # # 자리수와 숫자 체크 
+    # while num!=0:
+    #     size=len(str(num))
+    #     k=int(str(num)[i])
         
-        if 4== size:
-            roma+= 'M'*k
-            num -= 1000*k
-        elif size==3:
-            if 9 == k:
-                roma +='CM'
-                num-=900
-            elif 5<=k<9:
-                roma += 'D'
-                num-=500
-            elif 4<=k<5:
-                roma += 'CD'
-                num-= 400
-            else: 
-                roma += 'C'
-                num-=100
-        elif size==2:
-            if 9 == k:
-                roma +='XC'
-                num-=90
-            elif 5<=k<9:
-                roma += 'L'
-                num-=50
-            elif 4<=k<5:
-                roma += 'XL'
-                num-= 40
-            else: 
-                roma += 'X'
-                num-=10
-        else:
-            if 9 == k:
-                roma +='IX'
-                num-=9
-            elif 5<=k<9:
-                roma += 'V'
-                num-=5
-            elif 4<=k<5:
-                roma += 'IV'
-                num-= 4
-            else: 
-                roma += 'I'
-                num-=1
+    #     if 4== size:
+    #         roma+= 'M'*k
+    #         num -= 1000*k
+    #     elif size==3:
+    #         if 9 == k:
+    #             roma +='CM'
+    #             num-=900
+    #         elif 5<=k<9:
+    #             roma += 'D'
+    #             num-=500
+    #         elif 4<=k<5:
+    #             roma += 'CD'
+    #             num-= 400
+    #         else: 
+    #             roma += 'C'
+    #             num-=100
+    #     elif size==2:
+    #         if 9 == k:
+    #             roma +='XC'
+    #             num-=90
+    #         elif 5<=k<9:
+    #             roma += 'L'
+    #             num-=50
+    #         elif 4<=k<5:
+    #             roma += 'XL'
+    #             num-= 40
+    #         else: 
+    #             roma += 'X'
+    #             num-=10
+    #     else:
+    #         if 9 == k:
+    #             roma +='IX'
+    #             num-=9
+    #         elif 5<=k<9:
+    #             roma += 'V'
+    #             num-=5
+    #         elif 4<=k<5:
+    #             roma += 'IV'
+    #             num-= 4
+    #         else: 
+    #             roma += 'I'
+    #             num-=1
     return roma
+
+
 
 # 입력
 n1=input().strip()
