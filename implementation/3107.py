@@ -18,10 +18,8 @@ for i in range(len(lst)):
             total+=":"
         else:
             total+=lst[i] + ":"
-if len(total) == 40:
-    print(total[:-1])
-else:
-    print(total)
+
+print(total[:-1])
 
      
 
