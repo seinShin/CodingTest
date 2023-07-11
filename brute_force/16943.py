@@ -10,7 +10,6 @@ sa = str(a)
 
 for com in permutations(sa, len(sa)):
     x = ''.join(com)
-    print(x)
     if x[0] == "0":
         continue
     x=int(x)
