@@ -4,13 +4,14 @@ input = sys.stdin.readline
 
 
 def fact(n):
-    if n == 1:
-        return 1
-    else:
-        return (n*fact(n-1))
+    f=1
+    for i in range(n):
+        f *= (i+1)
+    return f
+        
     
 
 t = int(input())
 for _ in range(t):
     n,m = map(int, input().split())
-    print(fact(m) // fact(m-n) * fact(n))
+    print(fact(m) // (fact(m-n) * fact(n)))
