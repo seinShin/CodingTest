@@ -9,16 +9,14 @@ total = b+c
 
 
 ans=0
-for i in range(len(people)):
+for i in range(n):
     if people[i] <= total:
-        if people[i] <= b:
+        ans+=1
+        if people[i] > b:
             ans += 1
-        else:
-            ans+=2
     else:
         tmp = (people[i]-total) 
-        ans+=2
-        ans+= tmp//c
+        ans+= tmp//c + 2
         if tmp%c:
             ans+=1
         
