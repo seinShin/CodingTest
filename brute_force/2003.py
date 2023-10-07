@@ -24,6 +24,7 @@ while True:
     if sum < m:
         if right < n:
             sum+=lst[right]
+            right+=1
         else:
             break
     elif sum == m:
