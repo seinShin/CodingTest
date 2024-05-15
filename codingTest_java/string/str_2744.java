@@ -1,4 +1,4 @@
-package codingTest_java;
+package codingTest_java.string;
 import java.util.Scanner;
 public class str_2744 {
     public static void main(String[] args) {
