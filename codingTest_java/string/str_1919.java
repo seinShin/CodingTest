@@ -18,7 +18,7 @@ public class str_1919 {
 
         int ans=0;
         for(int i=0; i<26; i++){
-            if(countA[i]> countB[i]){
+            if(countA[i]> countB[i]){       //ans+=Math.abs(countA[i]-countB[i])
                 ans+=countA[i]-countB[i];
             }else if(countB[i]> countA[i]){
                 ans+=countB[i]-countA[i];
