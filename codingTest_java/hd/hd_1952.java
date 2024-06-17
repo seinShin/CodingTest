@@ -14,17 +14,17 @@ public class hd_1952 {
         M = sc.nextInt();
         N = sc.nextInt();
 
-        map = new int[m][n];
+        visited = new boolean[M][N];
 
         int cnt = 0;
-        int sum = 0;
+        int sum = 1;
 
         int idx = 0;
         int nowX=0;
         int nowY=0;
 
         visited[nowX][nowY] = true;
-        sum=1;
+
 
         while(idx < 4){
             int nx= nowX+dx[idx];
@@ -39,9 +39,7 @@ public class hd_1952 {
                 visited[nx][ny] = true; // 방문 처리
                 nowX = nx; // 다음 탐색을 위해 갱신
                 nowY = ny;
-            }
-
-            else{
+            }else{
                 idx++;
                 cnt++;
             }
