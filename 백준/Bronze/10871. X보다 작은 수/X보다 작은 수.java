@@ -1,5 +1,4 @@
 
-
 import java.util.*;
 public class Main {
     static int N;
@@ -9,16 +8,14 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         N = sc.nextInt();
         X = sc.nextInt();
-
+        
+        StringBuilder sb = new StringBuilder();
         for(int i=0; i<N; i++){
             int tmp = sc.nextInt();
-            if(tmp < X) list.add(tmp);
+            if(tmp < X) sb.append(tmp).append(" ");
         }
 
-        for(int i=0; i<list.size(); i++){
-            System.out.print(list.get(i));
-            System.out.print(" ");
-        }
+        System.out.println(sb);
     }
 }
 
