@@ -21,7 +21,7 @@ public class Main {
         int sum=2;
         int cnt=0;
 
-        while(start<arr.size() && end<arr.size()){
+        while(start<arr.size()){
             if(sum == N){
                 cnt++;
                 sum-=arr.get(start);
